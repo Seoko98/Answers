@@ -1,4 +1,7 @@
 ﻿  Lifeboat.cpp
-C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(14,33): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(46,31): warning C4267: '+=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(13,28): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(29,36): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(30,36): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(66,43): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\admin\source\repos\CodeTests\Answers\Answers\Lifeboat.cpp(75,36): warning C4267: '+=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Answers.vcxproj -> C:\Users\admin\source\repos\CodeTests\Answers\x64\Debug\Answers.exe
