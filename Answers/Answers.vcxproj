@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Connecting_Island.cpp" />
     <ClCompile Include="Lifeboat.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stds.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
