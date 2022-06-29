@@ -21,6 +21,15 @@
     <ClCompile Include="Connecting_Island.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Buy_Ramen.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="B1043.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="B1167.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stds.h">
