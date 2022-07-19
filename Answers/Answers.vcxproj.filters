@@ -30,6 +30,9 @@
     <ClCompile Include="B1167.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="B1049.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stds.h">
