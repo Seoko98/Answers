@@ -61,6 +61,7 @@ int solution(int N, int M, vector<pair<int, int>> brands)
 
 	return min_price;
 }
+/*
 int main()
 {
 	int N, M; // N = 끊어진 기타줄 개수, M = 기타줄 브랜드 수
@@ -70,4 +71,4 @@ int main()
 
 	cout << solution(N, M, brands);
 }
-
+*/
