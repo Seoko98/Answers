@@ -72,9 +72,12 @@ int B2138Solution()
 	int size = currentState.size();
 	// 0번 스위치를 누르는 경우
 	
+	return 0;
 }
 
+/*
 int main()
 {
 	cout << B2138Solution();
 }
+*/

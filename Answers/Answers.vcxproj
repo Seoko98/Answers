@@ -139,12 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="B1003.cpp" />
     <ClCompile Include="B1043.cpp" />
     <ClCompile Include="B1049.cpp" />
     <ClCompile Include="B1052.cpp" />
+    <ClCompile Include="B1074.cpp" />
     <ClCompile Include="B1105.cpp" />
+    <ClCompile Include="B1107.cpp" />
     <ClCompile Include="B1167.cpp" />
     <ClCompile Include="B1263.cpp" />
+    <ClCompile Include="B1389.cpp" />
+    <ClCompile Include="B1541.cpp" />
     <ClCompile Include="B1946.cpp" />
     <ClCompile Include="B2138.cpp" />
     <ClCompile Include="Buy_Ramen.cpp" />
