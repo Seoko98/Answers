@@ -98,8 +98,10 @@ int B1541Solution()
 	return answer;
 }
 
+/*
 int main()
 {
 	cout << B1541Solution();
 	return 0;
 }
+*/

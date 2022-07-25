@@ -150,6 +150,9 @@
     <ClCompile Include="B1263.cpp" />
     <ClCompile Include="B1389.cpp" />
     <ClCompile Include="B1541.cpp" />
+    <ClCompile Include="B1697.cpp" />
+    <ClCompile Include="B1780.cpp" />
+    <ClCompile Include="B1927.cpp" />
     <ClCompile Include="B1946.cpp" />
     <ClCompile Include="B2138.cpp" />
     <ClCompile Include="Buy_Ramen.cpp" />
