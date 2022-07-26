@@ -154,6 +154,7 @@
     <ClCompile Include="B1780.cpp" />
     <ClCompile Include="B1927.cpp" />
     <ClCompile Include="B1946.cpp" />
+    <ClCompile Include="B1992.cpp" />
     <ClCompile Include="B2138.cpp" />
     <ClCompile Include="Buy_Ramen.cpp" />
     <ClCompile Include="Connecting_Island.cpp" />

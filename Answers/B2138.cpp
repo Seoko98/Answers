@@ -16,19 +16,6 @@ void B2138Input(string &currentState, string &endState)
 	cin >> tmp;
 	endState = tmp;
 }
-// 현재 상태가 최종 상태와 같은지 확인한다.
-bool isSameState(string currentState, string endState)
-{
-	int size = currentState.size();
-
-	for (int i = 0; i < size; i++)
-	{
-		if (currentState[i] != endState[i])
-			return false;
-	}
-
-	return true;
-}
 // 0이면 1로, 1이면 0으로 변환한다.
 void switching (char &num)
 {
@@ -71,8 +58,51 @@ int B2138Solution()
 
 	int size = currentState.size();
 	// 0번 스위치를 누르는 경우
-	
-	return 0;
+	change(currentState, 0);
+	changeCount1++;
+
+	for (int i = 1; i < size; i++)
+	{
+		// 이전 스위치의 상태가 최종 스위치 상태랑 같지 않다면
+		if (currentState[i - 1] != endState[i - 1])
+		{
+			// 누른다
+			change(currentState, i);
+			changeCount1++;
+		}
+	}
+
+	// 위 과정을 거친 스위치가 최종 상태랑 같지 않다면
+	if (currentState != endState)
+		changeCount1 = -1;
+
+	// 초기화
+	currentState = firstState;
+
+	// 0번 스위치를 누르지 않는 경우
+	for (int i = 1; i < size; i++)
+	{
+		if (currentState[i - 1] != endState[i - 1])
+		{
+			change(currentState, i);
+			changeCount2++;
+		}
+	}
+
+	if (currentState != endState)
+		changeCount2 = -1;
+
+	// 스위치 누른 횟수 리턴
+	if (changeCount1 == -1 && changeCount2 == -1)
+		return -1;
+	else if (changeCount1 == -1)
+		return changeCount2;
+	else if (changeCount2 == -1)
+		return changeCount1;
+	else if (changeCount1 <= changeCount2)
+		return changeCount1;
+	else if (changeCount2 < changeCount1)
+		return changeCount2;
 }
 
 /*

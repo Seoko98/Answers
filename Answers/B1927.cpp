@@ -7,9 +7,9 @@ using namespace std;
 
 void input(priority_queue<int, vector<int>, greater<int>> &pr, vector<int> &answer)
 {
-	int tmp;
+	int tmp = 0;
 
-	scanf("%d", &tmp);
+	//scanf("%d", &tmp);
 	
 	if (tmp == 0)
 	{
