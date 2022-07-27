@@ -8,16 +8,7 @@ int searching(int N, int Row, int Col)
 {
 	int n = 0;
 
-	// Q = Quotient(¸ò), R = Remainder(³ª¸ÓÁö)
-	int rowQ = Row / 2;
-	int rowR = Row % 2;
 	
-	int r = rowR * 2;
-	while (rowQ > 1)
-	{
-		
-	}
-
 	return 0;
 }
 
