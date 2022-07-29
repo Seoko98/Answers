@@ -161,6 +161,10 @@
     <ClCompile Include="B2630.cpp" />
     <ClCompile Include="B2667.cpp" />
     <ClCompile Include="B5430.cpp" />
+    <ClCompile Include="B5525.cpp" />
+    <ClCompile Include="B6064.cpp" />
+    <ClCompile Include="B7569.cpp" />
+    <ClCompile Include="B7662.cpp" />
     <ClCompile Include="Buy_Ramen.cpp" />
     <ClCompile Include="Connecting_Island.cpp" />
     <ClCompile Include="Lifeboat.cpp" />

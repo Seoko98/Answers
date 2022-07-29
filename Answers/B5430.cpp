@@ -141,8 +141,10 @@ void B5430Solution()
 	cout << answers[answers.size() - 1];
 }
 
+/*
 int main()
 {
 	B5430Solution();
 	return 0;
 }
+*/

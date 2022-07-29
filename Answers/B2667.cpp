@@ -20,6 +20,7 @@ void B2667Input(int &N)
 	}
 }
 
+/*
 int bfs(int start_x, int start_y, int size)
 {
 	queue<pair<int, int>> que;
@@ -49,6 +50,7 @@ int bfs(int start_x, int start_y, int size)
 	return count;
 }
 
+
 void B2667Solution()
 {
 	int N;
@@ -74,7 +76,7 @@ void B2667Solution()
 		cout << answer[i] << endl;
 }
 
-/*
+
 int main()
 {
 	B2667Solution();
