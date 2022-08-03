@@ -1,122 +1,72 @@
-#include "stds.h"
+/*
+#include <iostream>
+#include <vector>
+#include <cstring>
 
-int dfs(int start, vector<pair<int, vector<pair<int, int>>>> vertex_Info)
+using namespace std;
+
+vector<pair<int, int>> tree[100001]; // 0 = v1, 1 = v2, 2 = distance
+bool visited[100001] = { false, };
+int max_distance = 0;
+int max_vertex = 1;
+
+void B1167Input()
 {
-	bool visit[100001] = {false, };
-	vector<int> last_V;
-	stack<int> s;
-	int current_D = 0, max_D = 0; // 현재 거리, 최대 거리
+	int N, v1, v2, distance;
+	cin >> N;
 
-	int current = 0;
-
-	for (int i = 1; i < vertex_Info.size() + 1; i++)
-	{
-		if (vertex_Info[i].first == start)
-		{
-			current = i;
-			break;
-		}
-	}
-	
-	s.push(current);
-	visit[current] = true;
-	while (!s.empty())
-	{
-		bool flag = true;
-		current = s.top();
-		s.pop();
-		// 정점의 논리적 위치를 물리적 위치로 치환
-		for (int i = 1; i < vertex_Info.size() + 1; i++)
-		{
-			if (vertex_Info[i].first == current)
-			{
-				current = i;
-				break;
-			}
-		}
-		
-		int len = vertex_Info[current].second.size();
-		
-		for (int i = 0; i < len; i++)
-		{
-			if (!visit[vertex_Info[current].second[i].first])
-			{
-				s.push(vertex_Info[current].second[i].first);
-				visit[vertex_Info[current].second[i].first] = true;
-				current_D += vertex_Info[current].second[i].second;
-				flag = false;
-			}
-
-			if (!flag)
-				break;
-		}		
-
-		if (flag)
-		{
-			if (current_D > max_D)
-				max_D = current_D;
-
-			current_D = 0;
-
-			for (int i = 1; i < vertex_Info.size() + 1; i++)
-				visit[i] = false;
-
-			for (int i = 0; i < last_V.size(); i++)
-				visit[last_V[i]] = true;
-
-			s.push(start);
-			visit[start] = true;
-			break;
-		}
-	}	
-
-	return max_D;
-}
-
-void input(int &vertex_Count, vector<pair<int, vector<pair<int, int>>>> &vertex_Info)
-{
-	cin >> vertex_Count;
-
-	vector<pair<int, int>> tmp;
-	tmp.emplace_back(make_pair(0, 0));
-	vertex_Info.emplace_back(make_pair(0, tmp));
-
-	tmp.clear();
-
-	int v1, v2, d; // 각각 정점, 거리
-	for (int i = 0; i < vertex_Count; i++)
+	for (int i = 1; i <= N; i++)
 	{
 		cin >> v1;
 		while (true)
 		{
 			cin >> v2;
-			// v2 입력 단계에 -1 입력 시 종료
 			if (v2 == -1)
 				break;
-
-			cin >> d;
-
-			tmp.emplace_back(make_pair(v2, d));
+			cin >> distance;
+			tree[v1].emplace_back(make_pair(v2, distance));
 		}
-
-		vertex_Info.emplace_back(make_pair(v1, tmp));
-		tmp.clear();
 	}
 }
 
-int tree_Radius()
+void dfs(int start_vertex, int curr_distance)
 {
-	int vertex_Count;
-	vector<pair<int, vector<pair<int, int>>>> vertex_Info;
+	visited[start_vertex] = true;
+	int dis = curr_distance;
 
-	input(vertex_Count, vertex_Info);
+	int size = tree[start_vertex].size();
+	
+	for (int i = 0; i < size; i++)
+	{
+		int next_vertex = tree[start_vertex][i].first;
+		int next_dis = dis + tree[start_vertex][i].second;
 
-	return dfs(1, vertex_Info);
+		if (!visited[next_vertex])
+		{
+			//cout << "start = " << start_vertex << " next = " << next_vertex << " distance = " << next_dis << endl;
+			if (next_dis > max_distance)
+			{
+				max_distance = next_dis;
+				max_vertex = next_vertex;
+			}
+			dfs(next_vertex, next_dis);
+		}
+	}
 }
 
-/*
+
+void B1167Solution()
+{
+	B1167Input();
+	dfs(1, 0);
+	memset(visited, false, sizeof(bool) * 100001);
+	dfs(max_vertex, 0);
+
+	cout << max_distance;
+}
+
 int main()
 {
-	cout << tree_Radius();
+	B1167Solution();
 }
 */
