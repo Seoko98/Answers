@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <vector>
 #include <string>
@@ -89,7 +90,7 @@ int B1541Solution()
 	for (int i = 0; i < op.size(); i++)
 		cout << op[i] << ' ';
 	cout << endl;
-	*/
+	
 
 	changeOp(op);
 
@@ -98,7 +99,7 @@ int B1541Solution()
 	return answer;
 }
 
-/*
+
 int main()
 {
 	cout << B1541Solution();

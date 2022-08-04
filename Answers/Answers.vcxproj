@@ -150,10 +150,13 @@
     <ClCompile Include="B11286.cpp" />
     <ClCompile Include="B1149.cpp" />
     <ClCompile Include="B1167.cpp" />
+    <ClCompile Include="B1238.cpp" />
     <ClCompile Include="B1263.cpp" />
     <ClCompile Include="B1389.cpp" />
     <ClCompile Include="B14500.cpp" />
+    <ClCompile Include="B1504.cpp" />
     <ClCompile Include="B1541.cpp" />
+    <ClCompile Include="B1629.cpp" />
     <ClCompile Include="B1697.cpp" />
     <ClCompile Include="B1780.cpp" />
     <ClCompile Include="B1927.cpp" />
