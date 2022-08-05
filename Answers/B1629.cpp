@@ -1,18 +1,19 @@
+/*
 #include <iostream>
 #include <vector>
 #include <cmath>
 
 using namespace std;
 
-void B1629Input(int &A, int &B, int &C)
+void B1629Input(long long &A, long long &B, long long &C)
 {
 	cin >> A >> B >> C;
 }
 
 void B1629Solution()
 {
-	vector<int> tmp;
-	int A, B, C;
+	vector<long long> tmp;
+	long long A, B, C;
 	int cycle = 1;
 	int cycle_start = 0;
 	bool isCycle = false;
@@ -20,7 +21,7 @@ void B1629Solution()
 	B1629Input(A, B, C);
 	for (int i = 1; i <= B; i++)
 	{
-		int num = pow(A, i);
+		long long num = pow(A, i);
 
 		if (num < C)
 			cycle_start++;
@@ -44,7 +45,7 @@ void B1629Solution()
 		cout << tmp[abs(p + cycle_start)];
 	else
 	{
-		int num = pow(A, B);
+		long long num = pow(A, B);
 		cout << num % C;
 	}
 }
@@ -54,3 +55,4 @@ int main()
 	B1629Solution();
 	return 0;
 }
+*/
