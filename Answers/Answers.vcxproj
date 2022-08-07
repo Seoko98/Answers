@@ -161,8 +161,12 @@
     <ClCompile Include="B1697.cpp" />
     <ClCompile Include="B1753.cpp" />
     <ClCompile Include="B1780.cpp" />
+    <ClCompile Include="B1865.cpp" />
+    <ClCompile Include="B1916.cpp" />
     <ClCompile Include="B1927.cpp" />
+    <ClCompile Include="B1932.cpp" />
     <ClCompile Include="B1946.cpp" />
+    <ClCompile Include="B1967.cpp" />
     <ClCompile Include="B1992.cpp" />
     <ClCompile Include="B2138.cpp" />
     <ClCompile Include="B2178.cpp" />

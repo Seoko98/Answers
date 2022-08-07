@@ -135,6 +135,18 @@
     <ClCompile Include="B1753.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="B1865.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="B1916.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="B1932.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="B1967.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stds.h">
