@@ -6,6 +6,7 @@
 using namespace std;
 
 int triangle[500][500];
+int memo[500][500];
 
 void B1932Input(int &N)
 {
@@ -19,27 +20,31 @@ void B1932Input(int &N)
 	}
 }
 
-int tree(int width, int height, int N)
+void tree(int N)
 {
-	// 현재 노드 정보를 받는다
-	int current = triangle[height][width];
-	int left = 0, right = 0;
+	memo[1][0] = triangle[1][0] + triangle[0][0];
+	memo[1][1] = triangle[1][1] + triangle[0][0];
 
-	// 자식이 있다면 (완전 이진 트리이기 때문에 가능한 if문이다.)
-	if (width < N - 1 && height < N - 1)
+	for (int i = 2; i < N; i++)
 	{
-		// 왼쪽 오른쪽 자식 정보를 받는다.
-		left = tree(width, height + 1, N);
-		right = tree(width + 1, height + 1, N);
-
-		// 디버깅
-		//cout << "height = " << height << " width = " << width << endl;
-		//cout << "left = " << left << " right = " << right << endl;
-		
+		for (int j = 0; j <= i; j++)
+		{
+			if (j == 0)
+			{
+				memo[i][j] = triangle[i][j] + memo[i - 1][j];
+			}
+			else if (j == i)
+			{
+				memo[i][j] = triangle[i][j] + memo[i - 1][j - 1];
+			}
+			else
+			{
+				memo[i][j] = max(triangle[i][j] + memo[i - 1][j - 1], triangle[i][j] + memo[i - 1][j]);
+			}
+			//디버그
+			//cout << "memo[" << i << "][" << j << "] = " << memo[i][j] << endl;
+		}
 	}
-
-	// 왼쪽 자식과 오른쪽 자식 중 더 큰 값을 현재 노드에 더해 리턴한다.
-	return max(current + left, current + right);
 }
 
 void B1932Solution()
@@ -49,7 +54,17 @@ void B1932Solution()
 
 	B1932Input(N);
 
-	int answer = tree(0, 0, N);
+	int answer = 0;
+
+	tree(N);
+
+	for (int i = 0; i < N; i++)
+	{
+		answer = max(answer, memo[N - 1][i]);
+	}
+	
+	if (N == 1)
+		answer = triangle[0][0];
 
 	cout << answer;
 }

@@ -1,9 +1,14 @@
+/*
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-void B1149Input(int &N, int house[][3])
+int house[1001][3];
+int memo[1001][3];
+
+void B1149Input(int &N)
 {
 	cin >> N;
 
@@ -16,80 +21,54 @@ void B1149Input(int &N, int house[][3])
 	}
 }
 
-int painting(int N, int house[][3], int firstColor)
+void painting(int N)
 {
-	int cost = house[0][firstColor];
-	int prev_Color = firstColor;
+	memo[0][0] = house[0][0];
+	memo[0][1] = house[0][1];
+	memo[0][2] = house[0][2];
 
 	for (int i = 1; i < N; i++)
 	{
-		switch (prev_Color)
+		for (int j = 0; j < 3; j++)
 		{
-		case 0:
-		{
-			if (house[i][1] > house[i][2])
+			int cost = house[i][j];
+
+			switch (j)
 			{
-				cost += house[i][2];
-				prev_Color = 2;
+			case 0:
+				memo[i][j] = min(cost + memo[i - 1][1], cost + memo[i - 1][2]);
+				break;
+			case 1:
+				memo[i][j] = min(cost + memo[i - 1][0], cost + memo[i - 1][2]);
+				break;
+			case 2:
+				memo[i][j] = min(cost + memo[i - 1][0], cost + memo[i - 1][1]);
+				break;
 			}
-			else
-			{
-				cost += house[i][1];
-				prev_Color = 1;
-			}
-			break;
-		}
-		case 1:
-		{
-			if (house[i][0] > house[i][2])
-			{
-				cost += house[i][2];
-				prev_Color = 2;
-			}
-			else
-			{
-				cost += house[i][0];
-				prev_Color = 0;
-			}
-			break;
-		}
-		case 2:
-		{
-			if (house[i][0] > house[i][1])
-			{
-				cost += house[i][1];
-				prev_Color = 1;
-			}
-			else
-			{
-				cost += house[i][0];
-				prev_Color = 0;
-			}
-			break;
-		}
+			//cout << "i = " << i << " j = " << j << " memo[i][j] = " << memo[i][j] << endl;
 		}
 	}
-	cout << cost << endl;
-	
-	return cost;
 }
 
 void B1149Solution()
 {
 	int N;
-	int house[1001][3];
 	int minCost;
 
-	B1149Input(N, house);
-
-	// 첫 집을 각 색깔로 칠했을 때의 비용을 비교해 최소 값을 구한다.
-	minCost = painting(N, house, 0);
-	minCost = min(minCost, painting(N, house, 1));
-	minCost = min(minCost, painting(N, house, 2));
+	B1149Input(N);
+	for (int i = 0; i < 1001; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			memo[i][j] = 1000001;
+	}
+	
+	painting(N);
+	minCost = min(memo[N - 1][0], memo[N - 1][1]);
+	minCost = min(minCost, memo[N - 1][2]);
 
 	cout << minCost;
 }
-/*
+
 int main()
 {
 	B1149Solution();

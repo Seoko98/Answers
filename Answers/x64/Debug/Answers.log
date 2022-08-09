@@ -1,3 +1,2 @@
-﻿  B1967.cpp
-C:\Users\admin\source\repos\CodeTests\Answers\Answers\B1967.cpp(30,38): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  B1932.cpp
   Answers.vcxproj -> C:\Users\admin\source\repos\CodeTests\Answers\x64\Debug\Answers.exe
