@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="B11779.cpp" />
+    <ClCompile Include="B12851.cpp" />
     <ClCompile Include="B10026.cpp" />
     <ClCompile Include="B1003.cpp" />
     <ClCompile Include="B1043.cpp" />
@@ -167,22 +169,28 @@
     <ClCompile Include="B1932.cpp" />
     <ClCompile Include="B1946.cpp" />
     <ClCompile Include="B1967.cpp" />
+    <ClCompile Include="B1991.cpp" />
     <ClCompile Include="B1992.cpp" />
     <ClCompile Include="B2096.cpp" />
     <ClCompile Include="B2138.cpp" />
     <ClCompile Include="B2178.cpp" />
     <ClCompile Include="B2206.cpp" />
+    <ClCompile Include="B2263.cpp" />
     <ClCompile Include="B2407.cpp" />
     <ClCompile Include="B2579.cpp" />
     <ClCompile Include="B2630.cpp" />
+    <ClCompile Include="B2638.cpp" />
     <ClCompile Include="B2667.cpp" />
     <ClCompile Include="B5430.cpp" />
     <ClCompile Include="B5525.cpp" />
+    <ClCompile Include="B5639.cpp" />
     <ClCompile Include="B6064.cpp" />
     <ClCompile Include="B7569.cpp" />
     <ClCompile Include="B7576.cpp" />
     <ClCompile Include="B7662.cpp" />
     <ClCompile Include="B9019.cpp" />
+    <ClCompile Include="B9251.cpp" />
+    <ClCompile Include="B9935.cpp" />
     <ClCompile Include="Buy_Ramen.cpp" />
     <ClCompile Include="Connecting_Island.cpp" />
     <ClCompile Include="Lifeboat.cpp" />

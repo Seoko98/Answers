@@ -1,13 +1,13 @@
 /*
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-// 메모이제이션 활용하려고 했는데 컨디션이 안좋아서 못하겠음.
-
 int field[300000]; // 2차원 배열 -> 1차원 배열로 [100000][3] -> [300000]
-int max_memo[300001] = { 0, };
-int min_memo[300001] = { 900001, };
+int prev_memo[3];
+int memo[3];
+
 
 void B2096Input(int &N)
 {
@@ -18,14 +18,87 @@ void B2096Input(int &N)
 	}
 }
 
-void descending(int N)
+void descending(int N, int mode)
 {
-	
+	memo[0] = field[0];
+	memo[1] = field[1];
+	memo[2] = field[2];
+
+	for (int i = 3; i < 3 * N; i++)
+	{
+		int index = i % 3;
+
+		if (index == 0)
+		{
+			for (int j = 0; j < 3; j++)
+				prev_memo[j] = memo[j];
+		}
+
+		switch (mode)
+		{
+		// mode = max
+		case 0:
+			switch (index)
+			{
+			// 왼쪽 인덱스
+			case 0:
+				memo[index] = max(prev_memo[0] + field[i], prev_memo[1] + field[i]);
+				break;
+			// 가운데 인덱스
+			case 1:
+				memo[index] = max(prev_memo[0] + field[i], prev_memo[1] + field[i]);
+				memo[index] = max(memo[index], prev_memo[2] + field[i]);
+				break;
+			// 오른쪽 인덱스
+			case 2:
+				memo[index] = max(prev_memo[1] + field[i], prev_memo[2] + field[i]);
+				break;
+			}
+			break;
+
+		// mode = min
+		case 1:
+			switch (index)
+			{
+				// 왼쪽 인덱스
+			case 0:
+				memo[index] = min(prev_memo[0] + field[i], prev_memo[1] + field[i]);
+				break;
+				// 가운데 인덱스
+			case 1:
+				memo[index] = min(prev_memo[0] + field[i], prev_memo[1] + field[i]);
+				memo[index] = min(memo[index], prev_memo[2] + field[i]);
+				break;
+				// 오른쪽 인덱스
+			case 2:
+				memo[index] = min(prev_memo[1] + field[i], prev_memo[2] + field[i]);
+				break;
+			}
+			break;
+			
+		}
+		//디버깅
+		//cout << "memo[" << index << "] = " << memo[index] << endl;
+	}
 }
 
 void B2096Solution()
 {
-	
+	int N;
+	int max_value = 0, min_value = 0;
+	B2096Input(N);
+
+	// max
+	descending(N, 0);
+	max_value = max(memo[0], memo[1]);
+	max_value = max(max_value, memo[2]);
+
+	// min
+	descending(N, 1);
+	min_value = min(memo[0], memo[1]);
+	min_value = min(min_value, memo[2]);
+
+	cout << max_value << ' ' << min_value;
 }
 
 int main()
